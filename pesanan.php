@@ -1,0 +1,1 @@
+<img src="<?php echo "https://chart.googleapis.com/chart?cht=qr&chs=300x300&chl=" . BASE_URL?>" >
