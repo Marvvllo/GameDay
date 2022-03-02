@@ -257,7 +257,8 @@ body {
 	float: left;
 	min-width: 25%;
 	height: 100vh;
-	background: var(--gradient-vertical);
+	background: var(--background);
+	border-right: 1px solid var(--background-var);
 }
 
 .menu-profile ul {
@@ -266,14 +267,34 @@ body {
 	list-style: none;
 }
 
+.menu-profile li {
+	border-bottom: 1px solid var(--background-var);
+}
+
 .menu-profile a {
+	position: relative;
 	display: block;
 	color: white;
 	text-decoration: none;
-	padding: 10px 20px;
+	padding: 0.75em 1.5em;
 }
 
-.menu-profile a:hover,
-.menu-profile a.active {
+.menu-profile a::before {
+	content: "";
+	position: absolute;
 	background-color: var(--secondary);
+	width: 0.25em;
+	height: 100%;
+	top: 0;
+	left: 0;
+	border-top-right-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 350ms ease-in-out;
+}
+
+.menu-profile a:hover::before,
+.menu-profile a.active::before {
+	transform: scaleX(1);
 }
