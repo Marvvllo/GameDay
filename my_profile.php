@@ -13,7 +13,7 @@
 	<div class="menu-profile">
 		<ul>
 			<?php
-				// if(!$level == "superadmin"){
+				if($level == "superadmin"){
 			?>
 			<li>
 				<a href="<?php echo BASE_URL . "index.php?page=my_profile&module=game&action=list"; ?>">Game</a>
@@ -28,7 +28,7 @@
 				<a href="<?php echo BASE_URL . "index.php?page=my_profile&module=banner&action=list"; ?>">Banner</a>
 			</li>
 			<?php
-				// }
+				}
 			?>
 			<li>
 				<a href="<?php echo BASE_URL . "index.php?page=my_profile&module=pesanan&action=list"; ?>">Pesanan</a>
