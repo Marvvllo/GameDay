@@ -1,12 +1,16 @@
 <?php
+session_start();
 include_once('./function/helper.php');
-// include_once('./function/koneksi.php');
+include_once('./function/koneksi.php');
 
+$user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : false;
+$level = isset($_SESSION['level']) ? $_SESSION['level'] : false;
 $page = isset($_GET['page']) ? $_GET['page'] : false;
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,42 +18,48 @@ $page = isset($_GET['page']) ? $_GET['page'] : false;
 	<link rel="stylesheet" href="css/style.css">
 	<title>GameDay | Tiket Permainan</title>
 </head>
+
 <body>
 	<header>
-		 <!-- header atas -->
 		<div class="nav__upper">
-			<a href="<?php echo BASE_URL?>" class="logo" >GameDay</a>
-				<ul class="nav__upperlink">
-					<li><a href="<?php echo BASE_URL."sale.php"?>">On Sale</a></li>
-					<li><a href="<?php echo BASE_URL."index.php?page=pesanan"?>">Pesanan</a></li>
-					<?php if (@$_GET['level']) {?>
-						<li><a href="<?php echo BASE_URL."index.php?page=login"?>">Login</a></li>
-					<?php } else { ?>
-						<li><a href="<?php echo BASE_URL."index.php?page=my_profile"?>">Akun</a></li>
-					<?php } ?>
-				</ul>
+			<a href="<?php echo BASE_URL ?>" class="logo">GameDay</a>
+			<ul class="nav__upperlink">
+				<li><a href="index.html">On Sale</a></li>
+				<li>
+					<?php
+					if ($user_id) {
+						echo " 
+								<a href='" . BASE_URL . "index.php?page=my_profile&module=pesanan&action=list'>My Profile</a>
+								
+								<li><a href='" . BASE_URL . "logout.php'>Logout</a></li>";
+					} else {
+						echo "<a href='" . BASE_URL . "index.php?page=login'>Login</a>";
+					}
+					?></li>
+
+			</ul>
 		</div>
-		 <!-- header bawah -->
 		<div class="nav__lower">
 			<ul class="nav__lowerlink">
-					<li><a href="<?php echo BASE_URL."index.php?kategori_id="?>">Basket</a></li>
-					<li><a href="<?php echo BASE_URL."index.php?kategori_id="?>">Sepak Bola</a></li>
-					<li><a href="<?php echo BASE_URL."index.php?kategori_id="?>">E-Sports</a></li>
-				</ul>
+				<li><a href="<?php echo BASE_URL . "index.php?kategori_id=" ?>">Basket</a></li>
+				<li><a href="<?php echo BASE_URL . "index.php?kategori_id=" ?>">Sepak Bola</a></li>
+				<li><a href="<?php echo BASE_URL . "index.php?kategori_id=" ?>">E-Sports</a></li>
+			</ul>
 		</div>
 	</header>
 
 	<main id="content">
-			<?php
-			$filename = "$page.php";
+		<?php
+		$filename = "$page.php";
 
-			if (file_exists($filename)) {
-				include_once($filename);
-			} else {
-				// include("./main.php");
-			}
-			?>
-		</main>
+		if (file_exists($filename)) {
+			include_once($filename);
+		} else {
+			// include("./main.php");
+		}
+		?>
+	</main>
 
 </body>
+
 </html>

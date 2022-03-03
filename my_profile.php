@@ -8,7 +8,7 @@
 	// }
 ?>
 
-<div id="bg-page-profile">
+<div class="bg-page-profile">
 
 	<div class="menu-profile">
 		<ul>

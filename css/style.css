@@ -148,15 +148,16 @@ body {
 	background: var(--gradient-horizontal);
 	display: flex;
 	justify-content: center;
-	max-width: 50%;
+	max-width: 40%;
 	margin-inline: auto;
 	margin-block: 1em;
 	padding-block: 2em;
+	padding-inline: 2em;
 	border-radius: 1rem;
 }
 
 .login-form {
-	min-width: 80%;
+	min-width: 100%;
 }
 
 .element-form {
@@ -198,6 +199,11 @@ body {
 
 .element-form span input[type="submit"]:hover {
 	background: var(--secondary);
+}
+
+.element-form span input[type="radio"] {
+	color: var(--white);
+	background-color: #17408b;
 }
 
 .tombol-action {
@@ -253,6 +259,11 @@ body {
 
 /* My Profile */
 
+.bg-page-profile {
+	display: grid;
+	grid-template-columns: 1fr 6fr;
+}
+
 .menu-profile {
 	float: left;
 	min-width: 25%;
@@ -297,4 +308,49 @@ body {
 .menu-profile a:hover::before,
 .menu-profile a.active::before {
 	transform: scaleX(1);
+}
+
+#frame-tambah {
+	margin-block: 1em;
+	text-align: right;
+}
+
+.table-list {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.table-list tr {
+	border-bottom: 1px solid #1e5474;
+	background: var(--gradient-horizontal);
+}
+
+.table-list tr.baris-title {
+	background: #e6e6e6;
+}
+
+.table-list tr th,
+.table-list tr td {
+	padding: 0.75em 1em;
+}
+
+.table-list tr td {
+	color: var(--white);
+}
+
+.kolom-nomor {
+	width: 20px;
+	text-align: center;
+}
+
+.tengah {
+	text-align: center;
+}
+
+.kiri {
+	text-align: left;
+}
+
+.kanan {
+	text-align: right;
 }
