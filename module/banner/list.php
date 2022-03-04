@@ -24,15 +24,15 @@
 		while ( $rowBanner = mysqli_fetch_array($queryBanner)) {
 
 			echo "<tr>
-							<th class='kolom-nomor'>$no</th>
-							<th class='kiri'>$rowBanner[banner]</th>
-							<th class='kiri'>
+							<td class='kolom-nomor'>$no</td>
+							<td class='kiri'>$rowBanner[banner]</td>
+							<td class='kiri'>
 								<a href='".BASE_URL."$rowBanner[link]' target='_blank' rel='noopener noreferrer'>$rowBanner[link]</a>
-							</th>
-							<th class='tengah'>$rowBanner[status]</th>
-							<th class='tengah'>
+							</td>
+							<td class='tengah'>$rowBanner[status]</td>
+							<td class='tengah'>
 								<a class='tombol-action' href='".BASE_URL."index.php?page=my_profile&module=banner&action=form&banner_id=$rowBanner[banner_id]'>Edit</a>
-							</th>
+							</td>
 						</tr>";
 
 			$no++;
