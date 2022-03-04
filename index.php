@@ -16,6 +16,22 @@ $page = isset($_GET['page']) ? $_GET['page'] : false;
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/banner.css">
+	<script src='<?php echo BASE_URL . "/js/jquery-3.6.0.min.js" ?>' ></script>
+	<script src='<?php echo BASE_URL . "/js/slidesjs-SlidesJS-3/slidesjs-SlidesJS-3/source/jquery.slides.min.js" ?>'></script>
+	
+	<script>
+    $(function() {
+      $('#slides').slidesjs({
+        height: 350,
+				play: {
+					auto: true,
+					interval: 3000
+				},
+				navigation: false
+      });
+    });
+  </script>
 	<title>GameDay | Tiket Permainan</title>
 </head>
 

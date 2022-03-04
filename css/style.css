@@ -357,6 +357,35 @@ body {
 
 /* Main Page */
 
+.cari-form {
+	background: var(--gradient-horizontal);
+	border-radius: 0.5rem;
+	width: 50%;
+	height: 2em;
+	margin-inline: auto;
+	margin-block: 0.5em;
+	padding-block: 0.25em;
+	padding-inline: 0.5em;
+	display: flex;
+}
+
+.cari-text {
+	background: transparent;
+	color: var(--white);
+	border: none;
+	width: 100%;
+}
+
+.cari-text::placeholder {
+	color: var(--white);
+}
+
+.cari-btn {
+	background: none;
+	border: none;
+	height: 90%;
+}
+
 .game-list {
 	list-style-type: none;
 	display: grid;

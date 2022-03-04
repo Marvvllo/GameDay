@@ -1,8 +1,14 @@
 <?php
 
 $kategori_id = isset($_GET['kategori_id']) ? $_GET['kategori_id'] : false;
+$search = isset($_GET['search']) ? $_GET['search'] : false;
 
 ?>
+
+<form class="cari-form" action="<?php echo BASE_URL . "index.php"?>" method="GET">
+	<input class="cari-text" type="text" placeholder="Cari.." name="search">
+	<input class="cari-btn" type="image" src="./images/icon/magnifying-glass-solid.svg">
+</form>
 
 <div id="slides">
 	<?php
@@ -19,15 +25,17 @@ $kategori_id = isset($_GET['kategori_id']) ? $_GET['kategori_id'] : false;
 
 		// Display barang sesuai kategori
 		if ($kategori_id) {
-			$queryBarang = mysqli_query($koneksi, "SELECT * FROM game WHERE kategori_id='$kategori_id' AND status='on' ORDER BY tanggal_game ASC");
+			$queryGame = mysqli_query($koneksi, "SELECT * FROM game WHERE kategori_id='$kategori_id' AND status='on' ORDER BY tanggal_game ASC");
+		} else if($search) {
+			$queryGame = mysqli_query($koneksi, "SELECT * FROM game WHERE nama_game like '%$search%' OR spesifikasi like '%$search%' OR spesifikasi like '%$search%' OR tanggal_game like '%$search%' OR harga like '%$search%' AND status='on'");
 		} else {
-			$queryBarang = mysqli_query($koneksi, "SELECT * FROM game WHERE status='on' ORDER BY tanggal_game ASC");
+			$queryGame = mysqli_query($koneksi, "SELECT * FROM game WHERE status='on' ORDER BY tanggal_game ASC");
 		}
 
-		if (mysqli_num_rows($queryBarang) == 0) {
+		if (mysqli_num_rows($queryGame) == 0) {
 			echo "<h3>Saat ini belum ada game di dalam kategori ini</h3>";
 		} else {
-			while ($row = mysqli_fetch_array($queryBarang)) {
+			while ($row = mysqli_fetch_array($queryGame)) {
 				$hari = $arrayHari[date( "w", strtotime($row['tanggal_game']))];
 				$tanggal = date( "d", strtotime($row['tanggal_game']));
 				$bulan = date( "m", strtotime($row['tanggal_game']));
