@@ -354,3 +354,77 @@ body {
 .kanan {
 	text-align: right;
 }
+
+/* Main Page */
+
+.game-list {
+	list-style-type: none;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1em;
+	margin-block: 1em;
+	margin-inline: 1em;
+}
+
+.price {
+	color: var(--white);
+	margin-bottom: 0.25em;
+}
+
+.game-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* background: var(--gradient-vertical); */
+	border-radius: 0.5rem;
+}
+
+.game-img__container {
+	position: relative;
+	max-width: 20em;
+	max-height: 20em;
+}
+
+.game-img__image {
+	width: 100%;
+	border-radius: 1rem;
+	background: var(--gradient-vertical);
+	background-clip: padding-box;
+	padding: 5px;
+}
+
+.game-img__text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-block: auto;
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(32, 32, 32, 0.7);
+	border-radius: 1rem;
+	color: var(--white);
+	font-weight: 700;
+	font-size: 1rem;
+	text-align: center;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 300ms ease-in-out;
+}
+
+.game-img__container:hover a .game-img__text {
+	visibility: visible;
+	opacity: 1;
+}
+
+.keterangan-gambar a {
+	text-decoration: none;
+	color: var(--white);
+}
+
+.keterangan-gambar span {
+	color: var(--white);
+	text-align: center;
+}

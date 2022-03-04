@@ -23,7 +23,7 @@
 
 		while ( $rowBanner = mysqli_fetch_array($queryBanner)) {
 
-			echo "<tr class='baris-title'>
+			echo "<tr>
 							<th class='kolom-nomor'>$no</th>
 							<th class='kiri'>$rowBanner[banner]</th>
 							<th class='kiri'>
@@ -42,4 +42,3 @@
 	}
 
 ?>
-

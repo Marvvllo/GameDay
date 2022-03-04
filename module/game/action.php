@@ -23,7 +23,7 @@ if (!empty($_FILES["file"]["name"])) {
 if ($button == "Add") {
 	mysqli_query($koneksi,
 	"INSERT INTO game (nama_game, kategori_id, spesifikasi, tanggal_game, gambar, harga, stok, status)
-								VALUES ('$nama_game', '$kategori_id', '$spesifikasi', $tanggal_game, '$nama_file', '$harga', '$stok', '$status')");
+								VALUES ('$nama_game', '$kategori_id', '$spesifikasi', '$tanggal_game', '$nama_file', '$harga', '$stok', '$status')");
 } else if ($button == "Update") {
 	$game_id = $_GET['game_id'];
 
@@ -39,6 +39,6 @@ if ($button == "Add") {
 											");
 }
 
-// header("location: " . BASE_URL . "index.php?page=my_profile&module=game&action=list");
+header("location: " . BASE_URL . "index.php?page=my_profile&module=game&action=list");
 
 ?>

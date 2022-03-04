@@ -24,7 +24,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : false;
 		<div class="nav__upper">
 			<a href="<?php echo BASE_URL ?>" class="logo">GameDay</a>
 			<ul class="nav__upperlink">
-				<li><a href="index.html">On Sale</a></li>
+				<li><a href="<?php echo BASE_URL . "index.php?page=sale"?>">On Sale</a></li>
 				<li>
 					<?php
 					if ($user_id) {
@@ -41,9 +41,9 @@ $page = isset($_GET['page']) ? $_GET['page'] : false;
 		</div>
 		<div class="nav__lower">
 			<ul class="nav__lowerlink">
-				<li><a href="<?php echo BASE_URL . "index.php?kategori_id=" ?>">Basket</a></li>
-				<li><a href="<?php echo BASE_URL . "index.php?kategori_id=" ?>">Sepak Bola</a></li>
-				<li><a href="<?php echo BASE_URL . "index.php?kategori_id=" ?>">E-Sports</a></li>
+				<li><a href="<?php echo BASE_URL . "index.php?kategori_id=1" ?>">Basket</a></li>
+				<li><a href="<?php echo BASE_URL . "index.php?kategori_id=2" ?>">Sepak Bola</a></li>
+				<li><a href="<?php echo BASE_URL . "index.php?kategori_id=3" ?>">E-Sports</a></li>
 			</ul>
 		</div>
 	</header>
@@ -55,7 +55,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : false;
 		if (file_exists($filename)) {
 			include_once($filename);
 		} else {
-			// include("./main.php");
+			include("./main.php");
 		}
 		?>
 	</main>
