@@ -56,7 +56,6 @@ $search = isset($_GET['search']) ? $_GET['search'] : false;
 	
 						<div class='keterangan-gambar'>
 							<p><a href='" . BASE_URL . "index.php?page=detail&game_id=$row[game_id]'>$hari, $tanggal-$bulan-$tahun</a></p>
-							<span>Stok : $row[stok]</span>
 						</div>
 					</li>
 					";
