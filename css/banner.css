@@ -1,3 +1,7 @@
+.carousel {
+	margin-top: 1em;
+}
+
 .carousel-inner img {
 	border-radius: 1rem;
 	margin-inline: auto;
