@@ -33,6 +33,10 @@ body {
 	background-color: var(--background);
 }
 
+p {
+	margin: 0;
+}
+
 /* Header */
 
 .nav__upper {
@@ -40,7 +44,7 @@ body {
 	background: var(--gradient-horizontal);
 	height: 3rem;
 	display: grid;
-	grid-template-columns: 1fr auto minmax(400px, 12fr) 2fr;
+	grid-template-columns: 1fr auto minmax(400px, 12fr) 1fr;
 }
 
 .logo {
@@ -433,13 +437,17 @@ body {
 	height: 100%;
 	background-color: rgba(32, 32, 32, 0.7);
 	border-radius: 1rem;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 300ms ease-in-out;
+}
+
+.game-img__text p {
 	color: var(--white);
 	font-weight: 700;
 	font-size: 1rem;
 	text-align: center;
-	visibility: hidden;
-	opacity: 0;
-	transition: all 300ms ease-in-out;
+	margin-bottom: 0.25em;
 }
 
 .game-img__container:hover a .game-img__text {

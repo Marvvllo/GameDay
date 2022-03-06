@@ -3,6 +3,7 @@
 }
 
 .carousel-inner img {
+	display: block;
 	border-radius: 1rem;
 	margin-inline: auto;
 	object-fit: cover;
