@@ -453,6 +453,7 @@ a:hover {
 	font-size: 1rem;
 	text-align: center;
 	margin-bottom: 0.25em;
+	padding-inline: 1em;
 }
 
 .game-img__container:hover a .game-img__text {
