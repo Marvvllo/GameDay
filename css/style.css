@@ -44,6 +44,12 @@ a:hover {
 
 /* Header */
 
+header {
+	position: sticky; /* Buat header tetap di atas */
+	top: 0;
+	z-index: 999;
+}
+
 .nav__upper {
 	background: rgb(23, 64, 139);
 	background: var(--gradient-horizontal);
