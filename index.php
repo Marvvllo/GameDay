@@ -18,6 +18,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : false;
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/banner.css">
+	<link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
 	<title>GameDay | Tiket Permainan</title>
 </head>
 
