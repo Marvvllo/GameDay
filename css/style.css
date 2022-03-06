@@ -231,7 +231,6 @@ header {
 	position: relative;
 	background: var(--background);
 	padding: 0.5rem 1rem;
-	width: 100%;
 	border-top: none;
 	border-left: none;
 	border-right: none;
@@ -239,7 +238,7 @@ header {
 	border-radius: 0.5em;
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
-	color: white;
+	color: var(--white);
 	font-size: 0.875rem;
 	font-weight: 700;
 	font-family: "Montserrat", sans-serif;
@@ -249,11 +248,11 @@ header {
 
 .tombol-action::after {
 	content: "";
+	color: var(--white);
 	position: absolute;
 	left: 0;
-	bottom: 0;
+	bottom: -0.25em;
 	background-color: var(--secondary);
-	border-radius: 12px;
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
 	height: 0.25em;
@@ -261,6 +260,9 @@ header {
 	transform: scaleX(0);
 	transform-origin: center;
 	transition: transform 300ms ease-in-out;
+}
+.tombol-action:hover {
+	color: var(--white);
 }
 
 .tombol-action:hover::after {
@@ -487,6 +489,7 @@ header {
 /* Detail */
 
 .container-detail {
+	margin-block: 1em;
 	margin-inline: 5em;
 	color: var(--white);
 }
@@ -502,10 +505,6 @@ header {
 .keterangan-game {
 	font-size: 1.75rem;
 	margin-bottom: 2em;
-}
-
-.nama-game {
-	margin-top: 0.25em;
 }
 
 .nama-game h2 {
