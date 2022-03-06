@@ -403,7 +403,8 @@ header {
 .cari-btn {
 	background: none;
 	border: none;
-	height: 90%;
+	height: 75%;
+	margin: auto;
 }
 
 .game-list {
