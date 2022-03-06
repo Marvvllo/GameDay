@@ -58,12 +58,11 @@ body {
 	justify-content: flex-end;
 	align-items: center;
 	list-style-type: none;
-	display: flex;
+	margin-bottom: 0 !important;
 }
 
 .nav__upperlink li {
 	margin-left: 3em;
-	margin-bottom: 0;
 }
 
 .nav__upperlink li a {
