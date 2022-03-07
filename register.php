@@ -48,7 +48,7 @@
             <span><input type="password" name="re_password"/></span>
         </div>
 
-        <button type="submit" class="tombol-action">REGISTER</button>
+        <button type="submit" class="tombol-action login-btn">REGISTER</button>
 
     </form>
 

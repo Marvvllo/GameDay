@@ -21,7 +21,7 @@
 		<span> <input type="password" name="password"/> </span>
 	</div>
 
-	<button type="submit" class="tombol-action">LOGIN</button>
+	<button type="submit" class="tombol-action login-btn">LOGIN</button>
 
 	<p class="register-link">atau <a href="<?php echo BASE_URL."index.php?page=register"?>">Register</a></p>
 
