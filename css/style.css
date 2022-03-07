@@ -263,7 +263,7 @@ header {
 	width: 100%;
 	transform: scaleX(0);
 	transform-origin: center;
-	transition: transform 500ms cubic-bezier(0.95, 0.13, 0, 1.11);
+	transition: transform 500ms cubic-bezier(0.95, 0.13, 0, 0.99);
 }
 .tombol-action:hover {
 	color: var(--white);
