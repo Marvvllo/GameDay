@@ -44,9 +44,16 @@ $page = isset($_GET['page']) ? $_GET['page'] : false;
 		</div>
 		<div class="nav__lower">
 			<ul class="nav__lowerlink">
-				<li><a href="<?php echo BASE_URL . "index.php?kategori_id=1" ?>">Basket</a></li>
-				<li><a href="<?php echo BASE_URL . "index.php?kategori_id=2" ?>">Sepak Bola</a></li>
-				<li><a href="<?php echo BASE_URL . "index.php?kategori_id=3" ?>">E-Sports</a></li>
+				<?php
+					$queryKategori = mysqli_query($koneksi, "SELECT * FROM kategori WHERE status='on'");
+					while ($rowKategori = mysqli_fetch_assoc($queryKategori)){
+						if (@$_GET['kategori_id'] == $rowKategori['kategori_id']) {
+							echo "<li><a class='active' href=" . BASE_URL . "index.php?kategori_id=$rowKategori[kategori_id]" . ">$rowKategori[kategori]</a></li>";
+						} else {
+							echo "<li><a href=" . BASE_URL . "index.php?kategori_id=$rowKategori[kategori_id]" . ">$rowKategori[kategori]</a></li>";
+						}
+					}
+				?>
 			</ul>
 		</div>
 	</header>
