@@ -7,7 +7,7 @@ $search = isset($_GET['search']) ? $_GET['search'] : false;
 
 
 <form class="cari-form" action="<?php echo BASE_URL . "index.php"?>" method="GET">
-	<input class="cari-text" type="text" placeholder="Cari.." name="search">
+	<input class="cari-text" type="text" placeholder="Cari.." value="<?php echo $search?>" name="search">
 	<input class="cari-btn" type="image" src="./images/icon/magnifying-glass-solid.svg">
 </form>
 
