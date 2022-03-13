@@ -12,7 +12,7 @@
 
 	echo "
 	<form action='" . BASE_URL . "proses_pesanan.php' method='GET'>
-	<input type='hidden' name='game_id' value='".$game_id."'>
+	<input type='hidden' name='game_id' value='$game_id'>
 		<div class='container-detail'>
 			<div class='frame-gambar'>
 				<img src='" . BASE_URL . "images/game/$row[gambar]' />
@@ -42,7 +42,7 @@
 
 					<div class='quantity-game'>
 						<h3>Quantity</h3>
-						<input value='1'  type='number' name='quantity' id='quantity'>
+						<input value='1' min='1' max='$row[stok]' type='number' name='quantity' id='quantity'>
 					</div>
 				</div>
 						
