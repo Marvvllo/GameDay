@@ -36,11 +36,16 @@
 									<div class='stok-game'>
 										<h3>Stok</h3>
 										<p>$row[stok] Kursi</p>
-										</div>
-										</div>
+									</div>
+
+									<div class='quantity-game'>
+										<h3>Quantity</h3>
+										<input value='1'  type='number' name='quantity' id='quantity'>
+									</div>
+								</div>
 										
 									<p class='harga-game'>".rupiah($row['harga'])."</p>
-									<a class='tombol-action tombol-beli' href='" . BASE_URL . "index.php?page=tambah_keranjang&barang_id=$row[game_id]'>Beli Tiket</a>
+									<a class='tombol-action tombol-beli' href='" . BASE_URL . "index.php?page=order&game_id=$row[game_id]&quantity=".$_REQUEST['quantity']."'>Beli Tiket</a>
 								</div>
 
 
@@ -50,3 +55,28 @@
 		?>
 	
 	</div>
+
+<script>
+	quantity = document.querySelector("#quantity")
+	harga = document.querySelector(".harga-game")
+
+	quantity.addEventListener('input', () => {
+		value = formatRupiah(<?php echo $row['harga'] ?> * quantity.value)
+  	harga.innerHTML = value
+	})
+
+	const formatRupiah = (money) => {
+   return new Intl.NumberFormat('id-ID',
+     { style: 'currency', currency: 'IDR', minimumFractionDigits: 2 }
+   ).format(money);
+}
+
+	$(".tombol-beli").on("click", function(e){
+		$.ajax({
+			method: "POST",
+			url: "detail.php",
+			data: "game_id="+barang_id+"&quantity="+quantity.value
+		})
+	})
+
+</script>

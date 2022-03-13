@@ -527,6 +527,10 @@ header {
 	font-weight: 700;
 }
 
+.detail-game .kanan input[type="number"] {
+	width: 40%;
+}
+
 .detail-game .kanan > * {
 	background-color: var(--black);
 	border: 1px solid var(--background-var);
