@@ -343,6 +343,11 @@ header {
 	text-align: right;
 }
 
+#profile-content h3 {
+	color: var(--white);
+	font-size: 1.5rem;
+}
+
 .table-list {
 	width: 100%;
 	border-collapse: collapse;
