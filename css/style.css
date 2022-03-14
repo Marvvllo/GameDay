@@ -283,6 +283,7 @@ header {
 
 .register-link a {
 	color: #ddd;
+	text-decoration: underline;
 }
 
 /* My Profile */
