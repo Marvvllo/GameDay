@@ -11,7 +11,7 @@
 	$tahun = date("Y", strtotime($row['tanggal_game']));
 
 	echo "
-	<form action='" . BASE_URL . "proses_pesanan.php' method='GET'>
+	<form action='" . BASE_URL . "proses_pesanan.php' method='POST'>
 	<input type='hidden' name='game_id' value='$game_id'>
 		<div class='container-detail'>
 			<div class='frame-gambar'>
