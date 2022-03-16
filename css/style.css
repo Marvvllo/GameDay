@@ -578,3 +578,64 @@ header {
 	flex-wrap: nowrap;
 	text-align: center;
 }
+
+/* Detail Pesanan */
+
+.detail-pesanan {
+	display: grid;
+	grid-template-rows: 0.125fr 1fr auto 0.125fr;
+	justify-content: center;
+	align-items: center;
+	background-image: url("../images/ticket.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	max-height: 30rem;
+	aspect-ratio: 1 / 2;
+	margin-top: 0.25rem;
+	margin-inline: 1em;
+	padding-block: 0.5em;
+	padding-inline: 1em;
+	color: #fff;
+	text-align: center;
+}
+
+.keterangan-pesanan {
+	position: relative;
+	grid-row: 2 / span 1;
+	display: flex;
+	flex-direction: column;
+	gap: 0.25em;
+}
+
+.keterangan-pesanan::after {
+	content: "";
+	width: calc(100% + 1.6em);
+	height: 0.25em;
+	position: absolute;
+	left: -0.8em;
+	bottom: -0.5em;
+	/* background-color: var(--background-var); */
+	border-bottom: 2px dashed var(--background-var);
+}
+
+.keterangan-pesanan h2 {
+	font-size: 1.25rem;
+}
+
+.keterangan-pesanan p {
+	font-size: 1rem;
+}
+
+.detail-pesanan img {
+	width: 100%;
+	grid-row: 3;
+	justify-self: center;
+	align-self: flex-end;
+	margin-block: 1em;
+	border-radius: 0.5rem;
+}
+
+#frame-keterangan-pembayaran {
+	grid-row: 3 / span 1;
+}
