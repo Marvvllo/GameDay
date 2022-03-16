@@ -41,7 +41,10 @@
 	</div>
 	
 	<div class="tiket-pesanan">
-		<p><?php echo $quantity ?> Kursi</p>
+		<div class="quantity-pesanan">
+			<h3><?php echo $quantity ?></h3>
+			<p>Kursi</p>
+		</div>
 	<?php
 		if ($row['status'] == 2) {
 			echo "<img src='https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl=$qrImage' />";

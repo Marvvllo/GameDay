@@ -345,7 +345,7 @@ header {
 	text-align: right;
 }
 
-#profile-content h3 {
+#profile-content > h3 {
 	color: var(--white);
 	font-size: 1.5rem;
 }
@@ -624,10 +624,17 @@ header {
 	align-items: center;
 }
 
-.tiket-pesanan p {
-	margin-top: 0.5em;
-	text-align: center;
+.quantity-pesanan h3 {
 	font-size: 2.5rem;
+	font-weight: bold;
+	text-align: center;
+}
+
+.quantity-pesanan p {
+	margin-top: -0.5em;
+	color: var(--background-light);
+	text-align: center;
+	font-size: 2rem;
 	font-weight: 700;
 }
 
@@ -639,4 +646,7 @@ header {
 
 #frame-keterangan-pembayaran p {
 	font-size: 1rem;
+	margin-top: 0.5em;
+	text-align: center;
+	font-weight: 700;
 }
