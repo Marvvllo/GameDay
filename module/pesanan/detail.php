@@ -11,32 +11,50 @@
 	$row = mysqli_fetch_assoc($query);
 
 	$nama_game = $row['nama_game'];
-	$tanggal_pemesanan = date("m-d-Y", strtotime($row['tanggal_pemesanan']));
 	$spesifikasi = $row['spesifikasi'];
 	$nama = $row['nama'];
+	$hari = $arrayHari[date( "w", strtotime($row['tanggal']))];
+	$tanggal = date("m-d-Y", strtotime($row['tanggal']));
 	$quantity = $row['quantity'];
 	$qrImage = urlencode(BASE_URL . "index.php?page=my_profile&module=pesanan&action=detail&pesanan_id=$pesanan_id");
 ?>
 
 <div class="detail-pesanan">
-		<div class="keterangan-pesanan">
-			<h2><?php echo $nama_game ?></h2>
-			<p><?php echo $tanggal_pemesanan ?></p>
-			<p><?php echo $spesifikasi ?></p>
-			<p><?php echo $nama ?></p>
-			<p><?php echo $quantity ?> Kursi</p>
+
+	<div class="keterangan-pesanan">
+		<div class="body-pesanan">
+			<h3><?php echo $nama_game ?></h3>
+			<p>Game</p>
 		</div>
-		<?php
-			if ($row['status'] == 3) {
-				echo "<img src='https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl=$qrImage' />";
-			} else {
-				echo "<div id='frame-keterangan-pembayaran'>
-								<p>
-									Setelah melakukan pembayaran silahkan lakukan konfirmasi pembayaran
-									<a href='echo" . BASE_URL . "index.php?page=my_profile&module=pesanan&action=konfirmasi_pembayaran&pesanan_id='$pesanan_id'>Disini</a>
-								</p>
-							</div>";
-			}
-		?>
+		<div class="body-pesanan">
+			<h3><?php echo $nama ?></h3>
+			<p>Nama</p>
+		</div>
+		<div class="body-pesanan">
+			<h3><?php echo $spesifikasi ?></h3>
+			<p>Tempat, waktu</p>
+		</div>
+		<div class="body-pesanan">
+			<h3><?php echo $hari . ", " . $tanggal ?></h3>
+			<p>Hari, tanggal</p>
+		</div>
 	</div>
+	
+	<div class="tiket-pesanan">
+		<p><?php echo $quantity ?> Kursi</p>
+	<?php
+		if ($row['status'] == 2) {
+			echo "<img src='https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl=$qrImage' />";
+		} else {
+			echo "<div id='frame-keterangan-pembayaran'>
+							<p>
+								Setelah melakukan pembayaran silahkan lakukan konfirmasi pembayaran
+								<a href='echo" . BASE_URL . "index.php?page=my_profile&module=pesanan&action=konfirmasi_pembayaran&pesanan_id='$pesanan_id'>Disini</a>
+							</p>
+						</div>";
+		}
+	?>
+	</div>
+
+</div>
 	

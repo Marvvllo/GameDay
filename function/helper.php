@@ -13,4 +13,10 @@
 	$arrayHari[4] = "Kamis";
 	$arrayHari[5] = "Jumat";
 	$arrayHari[6] = "Sabtu";
+
+
+	$arrayStatusPesanan[0] = "Menunggu Pembayaran";
+	$arrayStatusPesanan[1] = "Pembayaran Sedang Divalidasi";
+	$arrayStatusPesanan[2] = "Lunas";
+	$arrayStatusPesanan[3] = "Pembayaran Ditolak";
 ?>

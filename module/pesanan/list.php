@@ -1,10 +1,10 @@
 <?php
 
 	if ($level == "superadmin") {
-		$queryPesanan = mysqli_query($koneksi, "SELECT pesanan.*, user.nama FROM pesanan JOIN user ON pesanan.user_id=user.user_id ORDER BY pesanan.tanggal_pemesanan DESC");
+		$queryPesanan = mysqli_query($koneksi, "SELECT pesanan.*, user.nama FROM pesanan JOIN user ON pesanan.user_id=user.user_id ORDER BY pesanan.tanggal DESC");
 	} else {
 		$queryPesanan = mysqli_query($koneksi, "SELECT pesanan.*, user.nama FROM pesanan JOIN user ON pesanan.user_id=user.user_id WHERE pesanan.user_id='$user_id' 
-																						ORDER BY pesanan.tanggal_pemesanan DESC");
+																						ORDER BY pesanan.tanggal DESC");
 	}
 
 	if (mysqli_num_rows($queryPesanan) == 0) {
