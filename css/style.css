@@ -485,7 +485,8 @@ header {
 	padding-inline: 1em;
 }
 
-.game-img__container:hover a .game-img__text {
+.game-img__container:hover a .game-img__text,
+.game-img__container a:focus .game-img__text {
 	visibility: visible;
 	opacity: 1;
 }
