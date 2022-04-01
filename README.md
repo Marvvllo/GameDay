@@ -5,8 +5,7 @@ Projek ini kami buat untuk memenuhi nilai ujian blok pada mata pelajaran Pemrogr
 
 Front-End: Marvello Adwitya Nyahu
 
-Back-End: Ahmad Fathony 
-          Zaki Rikza Sadikin
+Back-End: Ahmad Fathony dan Zaki Rikza Sadikin
           
 Special Thanks:
   Guru kami, Minarti S.Pd.
