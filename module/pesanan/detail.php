@@ -7,7 +7,7 @@
 																		JOIN user on pesanan.user_id = user.user_id 
 																		JOIN pesanan_detail ON pesanan.pesanan_id = pesanan_detail.pesanan_id
 																		JOIN game on pesanan_detail.game_id = game.game_id 
-																		WHERE pesanan.pesanan_id='1'");
+																		WHERE pesanan.pesanan_id='$pesanan_id'");
 	$row = mysqli_fetch_assoc($query);
 
 	$nama_game = $row['nama_game'];
@@ -46,13 +46,20 @@
 			<p>Kursi</p>
 		</div>
 	<?php
-		if ($row['status'] == 2) {
+		if ($row['status'] == 1) {
+			echo "<div id='frame-keterangan-pembayaran'>
+							<p>
+								Anda telah melakukan pembayaran.
+								mohon tunggu selagi kami validasi pembayaran anda.
+							</p>
+						</div>";
+		} else if ($row['status'] == 2) {
 			echo "<img src='https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl=$qrImage' />";
 		} else {
 			echo "<div id='frame-keterangan-pembayaran'>
 							<p>
 								Setelah melakukan pembayaran silahkan lakukan konfirmasi pembayaran
-								<a href='echo" . BASE_URL . "index.php?page=my_profile&module=pesanan&action=konfirmasi_pembayaran&pesanan_id='$pesanan_id'>Disini</a>
+								<a href='" . BASE_URL . "index.php?page=my_profile&module=pesanan&action=konfirmasi_pembayaran&pesanan_id=$pesanan_id'>Disini</a>
 							</p>
 						</div>";
 		}

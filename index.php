@@ -28,7 +28,6 @@ $page = isset($_GET['page']) ? $_GET['page'] : false;
 		<div class="nav__upper">
 			<a href="<?php echo BASE_URL ?>" class="logo">GameDay</a>
 			<ul class="nav__upperlink">
-				<li><a href="<?php echo BASE_URL . "index.php?page=sale" ?>">On Sale</a></li>
 				<li>
 					<?php
 					if ($user_id) {

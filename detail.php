@@ -1,4 +1,5 @@
 <div id="detail-barang">
+	
 
 	<?php
 	$game_id = $_GET['game_id'];
@@ -19,7 +20,6 @@
 			</div>
 			
 			<div class='detail-game'>
-
 				<div class='kiri'>
 					<div class='nama-game'>
 						<h2>$row[nama_game]</h2>
@@ -39,16 +39,16 @@
 						<h3>Stok</h3>
 						<p>$row[stok] Kursi</p>
 					</div>
-
 					<div class='quantity-game'>
 						<h3>Quantity</h3>
 						<input value='1' min='1' max='$row[stok]' type='number' name='quantity' id='quantity'>
 					</div>
 				</div>
+
+				<input type='hidden' name='harga' id='hargaPost'value='".$row['harga']."'>
 						
 				<p class='harga-game'>" . rupiah($row['harga']) . "</p>
 				<button type='submit' class='tombol-action tombol-beli'>Beli Tiket</button>
-
 	</div>
 	</form>
 		";
@@ -64,6 +64,7 @@
 	quantity.addEventListener('input', () => {
 		value = formatRupiah(<?php echo $row['harga'] ?> * quantity.value)
 		harga.innerHTML = value
+		hargaPost.value = value;
 	})
 
 	const formatRupiah = (money) => {
