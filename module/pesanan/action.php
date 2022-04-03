@@ -29,10 +29,10 @@
 		if ($status == "2") {
 			$query = mysqli_query($koneksi, "SELECT * FROM pesanan_detail WHERE pesanan_id='$pesanan_id'");
 			while ($row = mysqli_fetch_assoc($query)) {
-				$barang_id = $row["barang_id"];
+				$game_id = $row["game_id"];
 				$quantity = $row["quantity"];
 
-				mysqli_query($koneksi, "UPDATE barang SET stok=stok-$quantity WHERE barang_id='$barang_id'");
+				mysqli_query($koneksi, "UPDATE game SET stok=stok-$quantity WHERE game_id='$game_id'");
 			}
 		}
 	}
