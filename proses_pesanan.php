@@ -16,11 +16,8 @@
 
     $query = mysqli_query($koneksi, "INSERT INTO `pesanan` (`pesanan_id`, `user_id`, `tanggal`, `status`)
                                     VALUES (NULL, $user_id, '$tanggal', '0'); ");
-    echo $tanggal;
     if($query){
         $last_pesanan_id = mysqli_insert_id($koneksi);
-        
-        
         $quantity = $_POST["quantity"];
         $harga = $_POST["harga"];
 				$queryDetail =  mysqli_query($koneksi, "INSERT INTO pesanan_detail(pesanan_id, game_id, quantity, harga)
