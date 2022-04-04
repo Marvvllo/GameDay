@@ -32,11 +32,11 @@ $page = isset($_GET['page']) ? $_GET['page'] : false;
 					<?php
 					if ($user_id) {
 						echo " 
-								<a href='" . BASE_URL . "index.php?page=my_profile&module=pesanan&action=list'>My Profile</a>
-								
+								<li><a href='" . BASE_URL . "index.php?page=my_profile&module=pesanan&action=list'>My Profile</a></li>
 								<li><a href='" . BASE_URL . "logout.php'>Logout</a></li>";
 					} else {
-						echo "<a href='" . BASE_URL . "index.php?page=login'>Login</a>";
+						echo "<li><a href='" . BASE_URL . "index.php?page=login'>Login</a></li>";
+						echo "<li><a href='" . BASE_URL . "index.php?page=register'>Register</a></li>";
 					}
 					?></li>
 
