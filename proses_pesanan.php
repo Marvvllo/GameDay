@@ -22,12 +22,12 @@
         $harga = $_POST["harga"];
 				$queryDetail =  mysqli_query($koneksi, "INSERT INTO pesanan_detail(pesanan_id, game_id, quantity, harga)
 				VALUES ($last_pesanan_id, '$game_id', '$quantity', '$harga' )");
+        header("Location:".BASE_URL."index.php?page=my_profile&module=pesanan&action=detail&pesanan_id=$last_pesanan_id");
     } else{
       echo "
           <p>Pesanan anda gagal, mohon coba lagi.</p>
           ";
     }
     
-    header("Location:".BASE_URL."index.php?page=my_profile&module=pesanan&action=detail&pesanan_id=$last_pesanan_id");
     
 ?>
