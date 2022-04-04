@@ -11,3 +11,7 @@ Special Thanks:
   Guru kami, Minarti S.Pd.
   Wali kelas kami, Widdi Hermawan.
   dan Teman-teman kami yang selalu mendukung kami dalam pembuatan projek ini.
+
+
+
+P.S. Fuck you bintang
