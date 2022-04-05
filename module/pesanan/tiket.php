@@ -67,10 +67,8 @@
 	</div>
 
 </div>
-
-<div id="frame-simpan">
-	<button class="tombol-action" id="openModal">Simpan</button>
-</div>
+	
+<button class="tombol-action" id="openModal">Simpan</button>
 
 <div class="modal">
 	<div class="modal-content">
