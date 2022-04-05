@@ -7,7 +7,10 @@
 																						ORDER BY pesanan.tanggal DESC");
 
 	} else {
-		$queryPesanan = mysqli_query($koneksi, "SELECT pesanan.*, game.nama_game, user.nama FROM pesanan JOIN user ON pesanan.user_id=user.user_id WHERE pesanan.user_id='$user_id' 
+		$queryPesanan = mysqli_query($koneksi, "SELECT pesanan.*, pesanan_detail.game_id, user.nama FROM pesanan 
+																						JOIN pesanan_detail ON pesanan.pesanan_id=pesanan_detail.pesanan_id
+																						JOIN user ON pesanan.user_id=user.user_id 
+																						WHERE pesanan.user_id='$user_id' 
 																						ORDER BY pesanan.tanggal DESC");
 	}
 
