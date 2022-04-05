@@ -588,7 +588,7 @@ header {
 	grid-template-columns: 2.25fr 1fr;
 	width: 85%;
 	aspect-ratio: 2 / 1;
-	margin-block: 1em;
+	margin-block: 0.75em;
 	margin-inline: auto;
 	padding-block: calc(1rem + 5px);
 	padding-inline: calc(1rem + 5px);

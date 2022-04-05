@@ -87,7 +87,7 @@
 	const closeModal = document.querySelector("#closeModal")
 	const options = {
 		allowTaint: true,
-		backgroundColor: "#333333"
+		backgroundColor: null
 	}
 
 	html2canvas(tiket, options).then(function(canvas) {
