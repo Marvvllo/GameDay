@@ -97,14 +97,12 @@
 		}
 
 		closeModal.onclick = function() {
-			modalContent.removeChild(canvas);
   		modal.style.display = "none";
 		}
 
 		window.onclick = function(event) {
 		if (event.target == modal) {
 				modal.style.display = "none";
-				modalContent.removeChild(canvas);
 			}
 		} 
 });
